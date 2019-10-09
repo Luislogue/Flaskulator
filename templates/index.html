@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+    <title>Flaskulator</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    
+	
+	</head>
+	<body>
+<div class="container">
+  <header><p><h1><b>Flaskulator</b></h1></p></header>
+			
+
+<div>
+<p>
+	<p></p>
+</p>
+
+<form class="formulario">
+  <div class="content">
+  <div class="form-input">
+    <label class="sr-only" for="Numero 1">Numero 1: </label>
+    <input type="text" class="num1" id="numero1" placeholder="Numero 1">
+  </div>
+  <div class="form-input">
+      <label class="sr-only" for="Operador">Operador</label>
+      <select name="operador" id="operador">
+        <option value="+" id="operador">+</option>
+        <option value="-" id="operador">-</option>
+        <option value="*" id="operador">*</option>
+        <option value="/" id="operador">/</option>
+      </select>
+  </div>
+
+  <div class="form-input">
+  <label class="sr-only" for="Numero 2">Numero 2: </label>
+  <input type="text" class="num2" id="numero2" placeholder="Numero 2">
+
+
+</div>
+<div>
+
+
+  <button type="submit" class="boton">Submit</button>
+</div>
+</form>
+</br>
+<div id="output" class="resultado"></div>
+</br>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+     $('form').on('submit', function(event) {
+       $.ajax({
+          data : {
+             numero1 : $('#numero1').val(),
+             operador : $('#operador').val(),
+             numero2 : $('#numero2').val(),
+                 },
+             type : 'POST',
+             url : '/process'
+            })
+        .done(function(data) {
+          $('#output').text(data.output).show();
+      });
+      event.preventDefault();
+      });
+});
+    </script>
+    </div>
+	</body>
+</html>
