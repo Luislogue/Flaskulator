@@ -21,7 +21,7 @@ label{
   box-shadow: 4px 7px 12px -2px rgba(0,0,0,0.75);
 
 }
-.formulario{
+.form{
   display: flex;
   flex-direction: column;
   margin: auto;

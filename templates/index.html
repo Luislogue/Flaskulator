@@ -1,72 +1,50 @@
 <!DOCTYPE html>
-<html lang='en'>
-	<head>
-    <title>Flaskulator</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    
-	
-	</head>
-	<body>
-<div class="container">
-  <header><p><h1><b>Flaskulator</b></h1></p></header>
-			
-
-<div>
-<p>
-	<p></p>
-</p>
-
-<form class="formulario">
-  <div class="content">
-  <div class="form-input">
-    <label class="sr-only" for="Numero 1">Numero 1: </label>
-    <input type="text" class="num1" id="numero1" placeholder="Numero 1">
-  </div>
-  <div class="form-input">
-      <label class="sr-only" for="Operador">Operador</label>
-      <select name="operador" id="operador">
-        <option value="+" id="operador">+</option>
-        <option value="-" id="operador">-</option>
-        <option value="*" id="operador">*</option>
-        <option value="/" id="operador">/</option>
-      </select>
-  </div>
-
-  <div class="form-input">
-  <label class="sr-only" for="Numero 2">Numero 2: </label>
-  <input type="text" class="num2" id="numero2" placeholder="Numero 2">
-
-
-</div>
-<div>
-
-
-  <button type="submit" class="boton">Submit</button>
-</div>
-</form>
-</br>
-<div id="output" class="resultado"></div>
-</br>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script>
-			$(document).ready(function() {
-     $('form').on('submit', function(event) {
-       $.ajax({
-          data : {
-             numero1 : $('#numero1').val(),
-             operador : $('#operador').val(),
-             numero2 : $('#numero2').val(),
-                 },
-             type : 'POST',
-             url : '/process'
-            })
-        .done(function(data) {
-          $('#output').text(data.output).show();
-      });
-      event.preventDefault();
-      });
-});
-    </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>ruleta</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>
+                    Ruleta de la muerte
+                </h1>
+            </header>
+            <main>
+                <form class="form" name="formulario" method="POST" action="ruleta">
+                    <h2>elige los bonus</h2>
+                    <label for="saltar">Saltar gajo</label>
+                    <input type="checkbox" name="saltar">
+                    <label for="coche">Coche</label>
+                    <input type="checkbox" name="coche">
+                    <label for="5000+tirada">5000€ + tirada</label>
+                    <input type="checkbox" name="5000+tirada">
+                    <label for="bote">Bote</label>
+                    <input type="checkbox" name="bote">
+                    <label for="100">+100</label>
+                    <input type="checkbox" name="100">
+                    <label for="50">+50</label>
+                    <input type="checkbox" name="50">
+                    <label for="botex2">Bote x2</label>
+                    <input type="checkbox" name="botex2">
+                    <label for="moto">moto</label>
+                    <input type="checkbox" name="moto">
+                    <label for="Bici">Bici</label>
+                    <input type="checkbox" name="Bici">
+                    <label for="PC">PC</label>
+                    <input type="checkbox" name="PC">
+                    <label for="nevera">nevera</label>
+                    <input type="checkbox" name="nevera">
+                    
+                    <input type="submit" value="Enviar">
+                </form>
+            </main>
+        </div>
     </div>
-	</body>
+</body>
 </html>
