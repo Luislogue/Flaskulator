@@ -42,3 +42,7 @@ label{
   font-size: 36px;
   margin: auto;
 }
+.historial{
+  display: flex;
+  flex-direction: column;
+}

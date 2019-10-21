@@ -1,3 +1,4 @@
-Perder
-Perder
--turno-1000€
+200€
+mitad_dinero
+1000€
+200€
