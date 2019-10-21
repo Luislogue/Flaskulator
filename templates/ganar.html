@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ruleta</title>
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <header><h1>HAS PERDIDO</h1></header>
+            <header><h1>HAS GANADO!</h1></header>
         </div>
         <div class="main">
-            <h2>Volver a jugar</h2>
-            <a href="{{ url_for('index')}}">Inicio</a>
+            <h2>Estos son tus premios:</h2>
+            <h3>{{historial}}</h3>
         </div>
+        <a href="{{ url_for('index')}}">Inicio</a>
     </div>
 </body>
 </html>

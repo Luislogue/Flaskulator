@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>ruleta</title>
 </head>
 <body>
@@ -15,10 +15,10 @@
             </header>
             <main>
                 <h2>Estos son tus bonus elegidos</h2>
-                    {%for key, value in bonuses.items() %}
+                    {%for item in bonuses %}
                     
                         <div class="bonuses">
-                            {{ key }}
+                            {{ item}}
                         </div>
 
                     {% endfor %}
@@ -37,19 +37,28 @@
                     <h2>TIRA DE LA RULETA A VER TU PREMIO</h2>
                     <div class="contador">
                         <form name="formulario" class="form" method="POST" action="ruleta">
-                            <h3>Tiradas: </h3>
+                            <h3>Tiradas:{{tiradas}} </h3>
                             <h3>Resultado tirada: {{ fijo }}</h3>
+
+                            
                             <input type="submit" value="TIRAR">
 
                         </form>
+                        <div class="ganar">
+                            <form name="formulario" class="form" method="POST" action="ganar">
+                                <div class="historial">
+                                    <h2>historial</h2>
+                                    {{historial}}
+                                </div>
+                                    <input type="submit" value="Acabar">
+                            </form>
+                            
+                        </div>
                     </div>
-                    <div class="historial">
-                        <h2>historial</h2>
-                        {{historial}}
-                    </div>
+                    
             </main>
         </div>
     </div>
-    
+
 </body>
 </html>

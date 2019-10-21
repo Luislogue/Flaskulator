@@ -5,3 +5,5 @@ Flask-WTF
 gunicorn==19.5.0
 gevent
 Flask-bootstrap
+WTForms
+Flask-WTF
